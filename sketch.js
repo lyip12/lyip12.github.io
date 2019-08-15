@@ -22,7 +22,7 @@ background(255);
 } 
 
 function windowResized(){
-resizeCanvas(windowWidth,600);
+resizeCanvas(windowWidth,windowHeight);
 }
 
 
