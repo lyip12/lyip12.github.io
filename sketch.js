@@ -15,9 +15,16 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
-  imageMode(CENTER);
+var myCanvas = createCanvas(windowWidth,windowHeight);
+myCanvas.parent('myContainer');
+imageMode(CENTER);
+background(255); 
+} 
+
+function windowResized(){
+resizeCanvas(windowWidth,600);
 }
+
 
 function draw() {
   translate(width/2,height/2);
@@ -101,7 +108,7 @@ function draw() {
   }
   
   if(counter > 500){
-    fill(255,255,255,(counter-500)*5)
+    fill(255,255,255,(counter-500)*6)
     rectMode(CENTER);
     rect(0,0,width/2,height/2);
   }
