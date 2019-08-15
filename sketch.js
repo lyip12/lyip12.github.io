@@ -3,7 +3,7 @@ var stage = 1;
 var loadcube;
 
 function preload() {
-  loadcube = loadModel('3d/load.obj',true);
+  loadcube = loadModel('3d/mini5.stl',true);
 }
 
 function setup() {
