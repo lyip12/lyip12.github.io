@@ -6,6 +6,8 @@ var SGR;
 var trigger = false;
 var welc;
 var counter = 0;
+var keyy = 10000000;
+
 // var loadcube;
 
 function preload() {
@@ -20,6 +22,7 @@ createCanvas(windowWidth,windowHeight);
 //myCanvas.parent('myContainer');
 imageMode(CENTER);
 background(0); 
+
 } 
 
 //
@@ -36,8 +39,9 @@ function draw() {
 
 
   if(stage==1){
+
     counter=0;
-    stage = 4;
+    stage = 2;
   }
   
   
@@ -77,7 +81,7 @@ function draw() {
   }
 
 
-// -------------------------------------------------------------------------------------------------------------------------------------- facade system welcome page and logo
+// -------------------------------------------------------------------------------------------------------------------------------------- facade system welcome page and logo + id
 
   if(stage==3){
   counter++;
@@ -100,15 +104,15 @@ function draw() {
   textFont(SGR);
   text("Microsoft Tenant Data Physicalization Tool",0,180);
   
-  if(counter < 300){
+  if(counter < 290){
   stroke(0,0,0,counter/2);
   strokeWeight(2);
   line(-counter/2,160,counter/2,160);
   }
-  if(counter > 300){
+  if(counter > 290){
   stroke(0,0,0,counter/2);
   strokeWeight(2);
-  line(-150,160,150,160);
+  line(-147,160,147,160);
   noStroke();
   }
   
@@ -119,24 +123,90 @@ function draw() {
   }
   
   if(counter>530){
-  stage = 4;
-  counter=0;
+
+    
+  push();
+  
+  background(255,195);
+  noStroke();
+  fill('#78c0d6');
+  rectMode(CORNER);
+  rect(-150,-250,300,450);
+  fill('#c2f1ff');
+  rect(-150,-220,7,52);
+  
+  fill(0);
+  
+  textAlign(LEFT);
+  textFont(SGB);
+  textSize(24);
+  text("Hello,",-120,-200);
+  text("this is FACADE.",-120,-170);
+  textFont(SGR);
+  textSize(12);
+  text("FACADE is a Client Data Phsyicalization",-120,-130);
+  text("tool developed by M365 Data Analytics and",-120,-115);
+  text("Microsoft Research. It is meant to help you",-120,-100);
+  text("engage with and understand your org's",-120,-85);
+  text("strengths and weaknesses, growth and",-120,-70);
+  text("development. We think these resources will",-120,-55);
+  text("be helpful to you as you progress forward.",-120,-40);
+  fill('#c2f1ff');
+  
+  if(mouseX > -130+width/2 && mouseX < width/2 && mouseY >height/2-25 && mouseY<height/2-10){
+    fill('#547cff');
   }
+  text("why is this important?",-120,-20);
+  stroke('#c2f1ff');
+  if(mouseX > -130+width/2 && mouseX < width/2 && mouseY >height/2-25 && mouseY<height/2-10){
+    stroke('#547cff');
   }
+  line(-120,-18,-5,-18);
+
+  noStroke();
+  fill(255,255,255,50);
+  if(mouseX>-120+width/2 && mouseX<70+width/2 && mouseY>60+height/2 && mouseY<90+height/2){
+    fill(255,255,255,100);
+  }
+  rect(-120,60,210,30);
+  fill(255);
+  
+  if(mouseX>70+width/2 && mouseX<120+width/2 && mouseY>60+height/2 && mouseY<90+height/2){
+    fill('#547cff');
+  }
+  rect(90,60,30,30)
+  stroke(255);
+  strokeWeight(2);
+  line(103,70,110,75);
+  line(103,80,110,75);
+  noStroke();
+  fill(0);
+  
+  textFont(SGB);
+  text("Please enter your Org _ ID:",-120,50);
+  
+  if (keyIsDown(32)) {
+  keyy = -110;
+  }
+  textFont(SGR);
+  text("173642424134",keyy,80);
+  text("Empower every person and every",-120,150);
+  text("organization on the planet to achieve more.",-120,165);
+  pop();
+  
+  if(mouseIsPressed && mouseX>70+width/2 && mouseX<120+width/2 && mouseY>60+height/2 && mouseY<90+height/2){
+    stage = 4;
+    counter = 0;
+  }
+  
+  }
+}
+
+
 // -------------------------------------------------------------------------------------------------------------------------------------- facade system welcome page and logo
 
   if(stage==4){
     
-  push();
-  background(255);
-  fill(0);
-  textSize(24);
-  textAlign(CENTER);
-  textFont(SGB);
-  text("hello",0,150);
-
-  pop();
-  
   }
 
 
