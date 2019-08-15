@@ -44,15 +44,17 @@ function draw() {
   pop();
   
   push();
-  fill(255);
-  textFont(SGR);
-  textSize(10);
-  text(frameCount-timestamp+"%",10,10);
-  
   fill('#648493');
   rect(-200,50,400,3);
   fill(0,174,255);
   rect(-200,50,frameCount-timestamp,3);
+  
+  fill(255);
+  textFont(SGB);
+  textSize(50);
+  text('%',0,0);
+  
+  
   if(frameCount-timestamp > 400){
     timestamp = frameCount;
     stage = 3;
