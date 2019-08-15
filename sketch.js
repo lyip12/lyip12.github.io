@@ -1,7 +1,9 @@
+var mclick = 0;
 var timestamp;
 var stage = 1;
 var SGB;
 var SGR;
+var trigger = false;
 // var loadcube;
 
 function preload() {
@@ -11,9 +13,6 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth,windowHeight, WEBGL);
-  textFont(SGR);
-  textSize(10);
-  text("hi",10,10);
 }
 
 function draw() {
@@ -45,6 +44,11 @@ function draw() {
   pop();
   
   push();
+  fill(255);
+  textFont(SGR);
+  textSize(10);
+  text(frameCount-timestamp+"%",10,10);
+  
   fill('#648493');
   rect(-200,50,400,3);
   fill(0,174,255);
@@ -56,4 +60,10 @@ function draw() {
   pop()
   }
 
+}
+
+function mouseClicked() {
+  if(trigger ==true){
+  mclick++;
+  }
 }
