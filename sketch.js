@@ -15,15 +15,14 @@ function preload() {
 }
 
 function setup() {
-var myCanvas = createCanvas(windowWidth,windowHeight);
-myCanvas.parent('myContainer');
+//var myCanvas = createCanvas(windowWidth,windowHeight);
+createCanvas(windowWidth,windowHeight);
+//myCanvas.parent('myContainer');
 imageMode(CENTER);
-background(255); 
+background(0); 
 } 
 
-function windowResized(){
-resizeCanvas(windowWidth,windowHeight);
-}
+//
 
 
 function draw() {
@@ -38,7 +37,7 @@ function draw() {
 
   if(stage==1){
     counter=0;
-    stage = 2;
+    stage = 4;
   }
   
   
@@ -48,7 +47,7 @@ function draw() {
   
   if(stage==2){
   counter++;
-  background(0);
+  background(0,0,0,30);
   noStroke();
   
   push();
@@ -57,11 +56,17 @@ function draw() {
   fill(0,174,255);
   rect(-200,20,counter,2);
   
+  fill(0);
+  rectMode(CENTER);
+  rect(0,0,30,20);
   fill(255);
   textFont(SGB);
   textSize(12);
   textAlign(CENTER);
-  text(counter/4-0.25+" %",0,0);
+  text(int(counter/4-0.25)+" %",0,0);
+  textFont(SGR);
+  rect(counter-200+random(-10,10),random(10,30),random(1,3),random(1,3));
+  text("... lucy is not sure what she is doing but she thinks she is trying ...",0,50);
   
   if(counter > 400){
     counter = 0;
@@ -108,7 +113,7 @@ function draw() {
   }
   
   if(counter > 500){
-    fill(255,255,255,(counter-500)*6)
+    fill(255,255,255,(counter-500)*6.5)
     rectMode(CENTER);
     rect(0,0,width/2,height/2);
   }
@@ -117,17 +122,26 @@ function draw() {
   stage = 4;
   counter=0;
   }
+  }
 // -------------------------------------------------------------------------------------------------------------------------------------- facade system welcome page and logo
 
   if(stage==4){
     
-  counter++;
+  push();
+  background(255);
+  fill(0);
+  textSize(24);
+  textAlign(CENTER);
+  textFont(SGB);
+  text("hello",0,150);
+
+  pop();
   
   }
 
 
 
-}}
+}
 
 // function mouseClicked() {
 //   if(trigger ==true){
