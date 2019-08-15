@@ -12,18 +12,14 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight, WEBGL);
+  createCanvas(windowWidth,windowHeight);
 }
 
 function draw() {
-  
+  translate(width/2,height/2);
 
   var locX = mouseX ;
   var locY = mouseY;
-
-  ambientLight(50);
-  directionalLight(150,150,150,1,1,1);
-  pointLight(0,0,255, locX, locY,200);
 
   if(stage==1){
     timestamp = frameCount;
@@ -33,26 +29,19 @@ function draw() {
   
   if(stage==2){
   background(0);
-
-  push();
-  fill(0);
-  translate(0,-50,0);
-  rotateZ(frameCount * 0.005);
-  rotateX(frameCount * 0.01);
-  specularMaterial(255);
-  box(30,30,30);
-  pop();
+  noStroke();
   
   push();
   fill('#648493');
-  rect(-200,50,400,3);
+  rect(-200,50,400,2);
   fill(0,174,255);
-  rect(-200,50,frameCount-timestamp,3);
+  rect(-200,50,frameCount-timestamp,2);
   
   fill(255);
   textFont(SGB);
-  textSize(50);
-  text('%',0,0);
+  textSize(10);
+  textAlign(CENTER);
+  text((frameCount-timestamp)/4-0.25+" %",0,0);
   
   
   if(frameCount-timestamp > 400){
