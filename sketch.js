@@ -41,7 +41,7 @@ function draw() {
   if(stage==1){
 
     counter=0;
-    stage = 4;
+    stage = 2;
   }
   
   
@@ -69,8 +69,9 @@ function draw() {
   textAlign(CENTER);
   text(int(counter/4-0.25)+" %",0,0);
   textFont(SGR);
+  text("... this whole thing is mildly confusing ...",0,50);
+  fill(0,174,255);
   rect(counter-200+random(-10,10),random(10,30),random(1,3),random(1,3));
-  text("... lucy is confused ...",0,50);
   
   if(counter > 400){
     counter = 0;
@@ -297,8 +298,43 @@ function draw() {
 // -------------------------------------------------------------------------------------------------------------------------------------- facade system welcome page and logo
 
   if(stage==5){
+    background(255);
+    counter++;
+    
+    noStroke();
+  
+  push();
+  fill('#648493');
+  rect(-200,20,400,2);
+  fill(0,174,255);
+  rect(-200,20,counter*2,2);
+  
+  fill(0);
+  textFont(SGB);
+  textSize(12);
+  textAlign(CENTER);
+  text(int(counter/2-0.25)+" %",0,0);
+  textFont(SGR);
+  text("... backend stuff happening ...",0,50);
+  fill(0,174,255);
+  rect(counter*2-200+random(-10,10),random(10,30),random(1,3),random(1,3));
+  
+  if(counter > 200){
+    counter = 0;
+    stage = 6;
+  }
+  pop()
+    
   }
 
+
+// -------------------------------------------------------------------------------------------------------------------------------------- facade system welcome page and logo
+
+  if(stage==6){
+    background(255);
+    counter++;
+
+}
 
 }
 
