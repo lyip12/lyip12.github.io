@@ -9,10 +9,12 @@ var trigger = false;
 function preload() {
   SGB = loadFont('font/SegoeUIBold.ttf');
   SGR = loadFont('font/SegoeUI.ttf');
+  var welco = loadImage('img/load.jpg');
 }
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
+
 }
 
 function draw() {
@@ -23,8 +25,12 @@ function draw() {
 
   if(stage==1){
     timestamp = frameCount;
-    stage = 2;
+    stage = 3;
   }
+  
+  
+  
+// -------------------------------------------------------------------------------------------------------------------------------------- loading page
   
   
   if(stage==2){
@@ -33,13 +39,13 @@ function draw() {
   
   push();
   fill('#648493');
-  rect(-200,50,400,2);
+  rect(-200,20,400,2);
   fill(0,174,255);
-  rect(-200,50,frameCount-timestamp,2);
+  rect(-200,20,frameCount-timestamp,2);
   
   fill(255);
   textFont(SGB);
-  textSize(10);
+  textSize(12);
   textAlign(CENTER);
   text((frameCount-timestamp)/4-0.25+" %",0,0);
   
@@ -51,6 +57,24 @@ function draw() {
   pop()
   }
 
+
+// -------------------------------------------------------------------------------------------------------------------------------------- facade system welcome page and logo
+
+  if(stage==3){
+    push();
+  background(255);
+  imageMode(CENTER);
+  if(width*0.56<height){
+    image(welc,0,0,height/0.56,height);
+  }else{
+    image(welc,0,0,width,width*0.56);
+  }
+  rectMode(CENTER);
+  fill(0,0,0,255-frameCount/3);
+  rect(0,0,2*width,2*height);
+  pop();
+
+}
 }
 
 function mouseClicked() {
