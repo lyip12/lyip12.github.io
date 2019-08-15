@@ -1,10 +1,10 @@
 var timestamp;
 var stage = 1;
-var loadcube;
+// var loadcube;
 
-function preload() {
-  loadcube = loadModel('3d/mini5.stl',true);
-}
+// function preload() {
+//   loadcube = loadModel('3d/mini5.stl',true);
+// }
 
 function setup() {
   createCanvas(windowWidth,windowHeight, WEBGL);
@@ -35,8 +35,9 @@ function draw() {
   rotateZ(frameCount * 0.005);
   rotateX(frameCount * 0.01);
   specularMaterial(255);
-  scale(1);
-  model(loadcube);
+  box(30,30,30);
+  // scale(1);
+  // model(loadcube);
   pop();
   
   push();
