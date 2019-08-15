@@ -1,13 +1,19 @@
 var timestamp;
 var stage = 1;
+var SGB;
+var SGR;
 // var loadcube;
 
-// function preload() {
-//   loadcube = loadModel('3d/mini5.stl',true);
-// }
+function preload() {
+  SGB = loadFont('font/SegoeUIBold.ttf');
+  SGR = loadFont('font/SegoeUI.ttf');
+}
 
 function setup() {
   createCanvas(windowWidth,windowHeight, WEBGL);
+  textFont(SGR);
+  textSize(10);
+  text("hi",10,10);
 }
 
 function draw() {
@@ -36,8 +42,6 @@ function draw() {
   rotateX(frameCount * 0.01);
   specularMaterial(255);
   box(30,30,30);
-  // scale(1);
-  // model(loadcube);
   pop();
   
   push();
