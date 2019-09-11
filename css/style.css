@@ -1,0 +1,128 @@
+body{
+    padding: 100px;
+}
+
+.orange{
+    height: 5px;
+    background: #FFC66C; 
+    margin-bottom: 25px;
+    margin-top:25px;
+}
+
+h1.bigtext {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    color: #FF5D5D; 
+}
+
+b{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 700;
+}
+p.smalltext{
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+p.smallertext{
+    width: 90%;
+    font-size: 10px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    text-align: left;
+}
+p.wherr{
+    font-size: 10px;
+    padding: 30px;
+}
+
+.midcontext{
+    width:90%;
+    margin-top: -25px;
+    align-content: flex-start;
+}
+
+.lastcol{
+    padding-left: 30px;
+    margin-top: -5px;
+    height:100%;
+    margin-right:-50px;
+}
+
+a.hyprtxt{
+    color: crimson;
+    font-weight: 700;
+}
+
+img.icon{
+    width: 90%;
+    margin-bottom: 10px;
+}
+img.vis{
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+a.drop {
+    font-family: 'Roboto', sans-serif;
+    color: #FF5D5D;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.divider{
+    border: 0.5px dashed #FF5D5D;
+}
+
+a.btn{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    border: 0px;
+    color:white;
+    background:#FFC66C;
+}
+
+a.btn-change{
+    -webkit-transition: all 0.1s ease-in-out;
+}
+a.btn-change:hover{
+    -webkit-transform: scale(1.1);
+    background: #FF5D5D;
+    color: white;
+}
+
+th{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+td{
+    padding-right: 40px;
+    color: lightgray;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+#righthalf{
+    padding-left: 50%;
+}

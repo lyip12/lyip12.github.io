@@ -1,17 +1,142 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>p5</title>
-    <script src="libraries/p5.js" type="text/javascript"></script>
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
 
-    <script src="libraries/p5.dom.js" type="text/javascript"></script>
-    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="sketch.js" type="text/javascript"></script>
+        <title>[L.Yip_CS171Homework1]</title>
 
-    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
-  </head>
-  <body>
-  </body>
-</html>
+        <link rel="stylesheet" href="css/style.css"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+
+    <body style="background-color: #423e40">
+
+
+
+        <div class="row">
+            <div class="col-md-2">
+
+                <!-- image from online sources -->
+                <img src="asset/agronomy.png" alt="icon" class="icon">
+                <p class="smallertext">COPYRIGHT INFO: The above image was found on flaticon.com</p>
+
+                <div class="btn-group">
+                    <a class="btn btn-primary btn-change" href="https://www.globalhungerindex.org/" role="button">more information</a>
+
+                    <a class="btn btn-primary dropdown-toggle btn-change" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                        <a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://www.cs171.org/2019/assets/instructions/hw1/HW1.html" class="drop">CS171 Homework Page</a></li>
+                                <li><a href="https://theuselessweb.com/" class="drop">A Random Site</a></li>
+                            </ul>
+                            </div>
+
+                        </div>
+
+                    <div class="col-md-6 midcontext">
+
+                        <div class="orange"></div>
+                        <!-- toplevel headline -->
+                        <h1 class="bigtext">GLOBAL HUNGER INDEX VISUALIZATION</h1>
+
+                        <div class="orange"></div>
+                        <!-- paragraph text with embedded text link -->
+                        <p class="smalltext">The Global Hunger Index (GHI) is designed to comprehensively measure and track hunger globally and by country and region. Calculated each year by the International Food Policy Research Institute (IFPRI), the GHI highlights successes and failures in hunger reduction and provides insights into the drivers of hunger. (IFPRI, 2015) <em>This is a CompSci171 homework assignment.</em> </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="lastcol">
+                            <div>
+
+                                <table class="sortable table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>COUNTRY</th>
+                                            <th>1990</th>
+                                            <th>2000</th>
+                                            <th>2014</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Central African Republic</td>
+                                            <td>51.9</td>
+                                            <td>51.4</td>
+                                            <td>46.9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chad</td>
+                                            <td>65</td>
+                                            <td>52</td>
+                                            <td>46.4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Haiti</td>
+                                            <td>52.1</td>
+                                            <td>42.8</td>
+                                            <td>37.3</td>
+                                        </tr>  
+                                        <tr>
+                                            <td>Madagascar</td>
+                                            <td>44.8</td>
+                                            <td>44.1</td>
+                                            <td>36.3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sierra Leone</td>
+                                            <td>58.8</td>
+                                            <td>53.3</td>
+                                            <td>38.9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>East Timor</td>
+                                            <td>--</td>
+                                            <td>--</td>
+                                            <td>40.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zambia</td>
+                                            <td>47</td>
+                                            <td>50.9</td>
+                                            <td>41.1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="asset/vis.png" alt="vis" class="vis">
+                </div>
+
+                <div id="righthalf">
+                    <div class="orange"></div>
+                    <p class="smalltext">The visualization above reflects the data from given GHI data set. The indexes are grouped by Countries, as individual countries' indexes are reflections of their unique circumstances and it does not make sense to compare them to each other. The amount of <b>spoil (red)</b> on the <b>grain (shades of yellow, changing based on the year)</b> represents the GHI data - where the greater the number, worse the situation. </p>
+                    <div class="orange"></div>
+                </div>
+
+
+
+
+
+
+
+                <!-- Optional JavaScript -->
+                <script src="js/sorttable.js"></script>
+
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+                </body>
+            </html>
