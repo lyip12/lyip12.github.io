@@ -2,6 +2,23 @@ body{
     padding: 100px;
 }
 
+.row{
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+h5.bad{
+    color: #FF5D5D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+h5.good{
+    color: #FFC66C;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
 .orange{
     height: 5px;
     background: #FFC66C; 
@@ -9,19 +26,24 @@ body{
     margin-top:25px;
 }
 
-h1.bigtext {
+.gry{
+   height: 1px;
+    background: dimgrey;
+    margin-bottom: 25px;
+    margin-top:25px; 
+}
+.bigtext {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 10px;
     margin-top: 25px;
-    text-align: left;
 }
 
 p{
     font-family: 'Roboto', sans-serif;
-    color: #FF5D5D; 
+    color: #FF5D5D;
 }
 
 b{
@@ -74,8 +96,17 @@ img.icon{
 }
 img.vis{
     width: 100%;
-    margin-top: 25px;
     margin-bottom: 10px;
+}
+img.exampleright{
+    width:90%;
+    margin-left:10%;
+    margin-bottom: 5px;
+}
+img.exampleleft{
+    width:90%;
+    margin-right:10%;
+    margin-bottom: 5px;
 }
 
 a.drop {
@@ -117,7 +148,7 @@ th{
 }
 td{
     padding-right: 40px;
-    color: lightgray;
+    color: rosybrown;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -126,3 +157,9 @@ td{
 #righthalf{
     padding-left: 50%;
 }
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+  }
