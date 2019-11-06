@@ -1,49 +1,26 @@
+/* BODY */
+
 body{
-    padding: 100px;
+    padding: 150px;
 }
 
-.row{
-    padding-top:25px;
-    padding-bottom:25px;
-}
 
-h5.bad{
-    color: #FF5D5D;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
+/* TEXT */
 
-h5.good{
-    color: #FFC66C;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
-
-.orange{
-    height: 5px;
-    background: #FFC66C; 
-    margin-bottom: 25px;
-    margin-top:25px;
-}
-
-.gry{
-   height: 1px;
-    background: dimgrey;
-    margin-bottom: 25px;
-    margin-top:25px; 
-}
-.bigtext {
+h1.bigtext {
     font-family: 'Roboto', sans-serif;
     color: white;
-    font-size: 48px;
+    font-size: 62px;
     font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 25px;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 p{
     font-family: 'Roboto', sans-serif;
-    color: #FF5D5D;
 }
 
 b{
@@ -51,36 +28,68 @@ b{
     color: white;
     font-weight: 700;
 }
+
 p.smalltext{
-    font-size: 14px;
+    color: #FF5D5D;
+    font-size: 18px;
     font-weight: 300;
-    margin-bottom: 25px;
-    margin-top: 10px;
     text-align: left;
 }
 
 p.smallertext{
-    width: 90%;
+    color: white;
     font-size: 10px;
     font-weight: 300;
-    margin-bottom: 15px;
-    margin-top: 25px;
     text-align: left;
 }
+
+p.t{
+    margin-top: -300px;
+    height: 1px
+        z-index: 1000;
+    color: #FF5D5D;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+}
+
 p.wherr{
     font-size: 10px;
     padding: 30px;
 }
 
-.midcontext{
-    width:90%;
-    margin-top: -25px;
-    align-content: flex-start;
+/* IMAGES */
+
+img.icon{
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* DIVS + FORMAT STUFF */
+
+
+.red{
+    margin-top: 2px;
+    margin-bottom: 15px;
+    height: 2px;
+    background: #FF3E63; 
+}
+
+.blank100{
+    height: 100px;
+}
+
+.blank200{
+    height: 200px;
+}
+
+.blank25{
+    height: 25px;
 }
 
 .lastcol{
     padding-left: 30px;
-    margin-top: -5px;
     height:100%;
     margin-right:-50px;
 }
@@ -90,24 +99,7 @@ a.hyprtxt{
     font-weight: 700;
 }
 
-img.icon{
-    width: 90%;
-    margin-bottom: 10px;
-}
-img.vis{
-    width: 100%;
-    margin-bottom: 10px;
-}
-img.exampleright{
-    width:90%;
-    margin-left:10%;
-    margin-bottom: 5px;
-}
-img.exampleleft{
-    width:90%;
-    margin-right:10%;
-    margin-bottom: 5px;
-}
+
 
 a.drop {
     font-family: 'Roboto', sans-serif;
@@ -115,10 +107,6 @@ a.drop {
     font-size: 12px;
     font-weight: 700;
     margin: 10px;
-}
-
-.divider{
-    border: 0.5px dashed #FF5D5D;
 }
 
 a.btn{
@@ -158,8 +146,58 @@ td{
     padding-left: 50%;
 }
 
+.right{
+    text-align-last: right;
+}
+
 .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
+.carousel-inner > .item > a > img {
     width: 70%;
     margin: auto;
-  }
+}
+
+/* YOUR CSS STYLES */
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.containera {
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+}
+
+.node circle {
+    fill: #FF5D5D;
+    stroke: #FF5D5D;
+    stroke-width: 3px;
+}
+
+.node text {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.link {
+    fill: none;
+    stroke: #FF5D5D;
+    stroke-width: 2px;
+}
+
+#responsive-image {  
+    width: 90%;  height: auto; 
+} 

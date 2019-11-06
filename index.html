@@ -1,337 +1,232 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!doctype html>
+<html>
     <head>
-
-        <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <title>[L.Yip_CS171Homework1]</title>
-
-        <link rel="stylesheet" href="css/style.css"> 
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CS171 - Midterm Project</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap" rel="stylesheet">
-
-        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     </head>
+    <body style="background-color: #262425">
 
-    <body style="background-color: #423e40">
+
+
+        <!-- top header -->
+        <div class="row">
+            <div class="col-md-2"><p class="smalltext">CS171 Midterm</p></div>
+            <div class="col-md-6"><p class="smalltext"><b>MALARIA VISUALIZATION</b> using <b>WHO Data</b></p></div>
+            <div class="col-md-4"><div class="right"><p class="smalltext">Interactive Visualization by <a href="https://yip.design/">LUCY YIP</a></p></div></div>
+        </div>
+
+        <div class="red"></div>
+
+        <div class="row">
+
+            <div class="col-md-2"><p class="smalltext"><a href="#intro">What is Malaria <i class="fa fa-sort-down"></i></a></p></div>
+            <div class="col-md-2"><p class="smalltext"><a href="#chorovis">Key Facts & Statistics <i class="fa fa-sort-down"></i></a></p></div>
+            <div class="col-md-2"><p class="smalltext"><a href="#2ndvis">The Parasites <i class="fa fa-sort-down"></i></a></p></div>
+            <div class="col-md-4"><p class="smalltext"><a href="#onwards">Moving Forward <i class="fa fa-sort-down"></i></a></p></div>
+            <div class="col-md-2 right"><p class="smalltext"><a href="https://www.cs171.org/2019/index.html"><i class="fa fa-sort-up"></i> CS171 Website</a></p></div>
+        </div>
+
+
+
+        <div class="blank100"></div>
 
         <div class="row">
             <div class="col-md-2">
-
                 <!-- image from online sources -->
-                <img src="asset/agronomy.png" alt="icon" class="icon">
-                <p class="smallertext">COPYRIGHT INFO: The above image was found on flaticon.com</p>
-
-                <div class="btn-group">
-                    <a class="btn btn-primary btn-change" href="https://www.globalhungerindex.org/" role="button">more information</a>
-
-                    <a class="btn btn-primary dropdown-toggle btn-change" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="http://www.cs171.org/2019/assets/instructions/hw1/HW1.html" class="drop">CS171 Homework Page</a></li>
-                        <li><a href="https://theuselessweb.com/" class="drop">A Random Site</a></li>
-                    </ul>
-
-                </div>
-
+                <img src="img/malaria.png" alt="COPYRIGHT INFO: The above image was found on flaticon.com" class="icon">
             </div>
 
-            <div class="col-md-6 midcontext">
-
-                <div class="orange"></div>
+            <div class="col-md-3">
                 <!-- toplevel headline -->
-                <h1 class="bigtext">GLOBAL HUNGER INDEX VISUALIZATION</h1>
-
-                <div class="orange"></div>
-                <!-- paragraph text with embedded text link -->
-                <p class="smalltext"><b>The Global Hunger Index (GHI)</b> is designed to comprehensively measure and track hunger globally and by country and region. Calculated each year by the International Food Policy Research Institute (IFPRI), the GHI highlights successes and failures in hunger reduction and provides insights into the drivers of hunger. (IFPRI, 2015) <em>This is a CompSci171 homework assignment.</em> </p>
+                <h1 class="bigtext">MALARIA</h1>
+                <h3>The Plasmodium Infection</h3>
+                <!-- paragraph text -->
+                <p class="smalltext">Malaria, also called plasmodium infection, is caused by the Plasmodium parasite and is transmitted by female Anopheles mosquitoes which bite between dusk and dawn. People infected with malaria often experience fever, chills and flu-like illness at first. Left untreated, the disease can lead to severe complications and, in some cases, death. The <a href="https://www.who.int/malaria/en/">World Health Organization (WHO)</a> estimates that 438,000 people died because of malaria in 2015; the Institute of Health Metrics and Evaluation (IHME), Global Burden of Disease (GBD) puts this estimate at 620,000 in 2017.</p>
             </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 containera"><p class="smalltext"><b>Malaria cases. </b><br><br>The number of malaria cases globally fell from an estimated 262 million in 2000 (range: 205– 316 million), to 214 million in 2015 (range: 149–303 million), a decline of 18%. Most cases in 2015 are estimated to have occurred in the WHO African Region (88%), followed by the WHO South-East Asia Region (10%) and the WHO Eastern Mediterranean Region (2%).</p>
+            </div>
+            <div class="col-md-3 containera"><p class="smalltext"><b>Malaria deaths. </b><br><br>The number of malaria deaths globally fell from an estimated 839 000 in 2000 (range: 653 000–1.1 million), to 438 000 in 2015 (range: 236 000–635 000), a decline of 48%. <br><br>Most deaths in 2015 were in the WHO African Region (90%), followed by the WHO South-East Asia Region (7%) and the WHO Eastern Mediterranean Region (2%). <br><br>The malaria mortality rate, which takes into account population growth, is estimated to have decreased by 60% globally between 2000 and 2015.</p>
 
-            <div class="col-md-4">
-                <div class="lastcol">
-                    <div>
+            </div>
+        </div>
+        <div class="blank100"></div>
 
-                        <table class="sortable table-borderless">
-                            <thead>
-                                <tr>
-                                    <th>COUNTRY</th>
-                                    <th>1990</th>
-                                    <th>2000</th>
-                                    <th>2014</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Central African Republic</td>
-                                    <td>51.9</td>
-                                    <td>51.4</td>
-                                    <td>46.9</td>
-                                </tr>
-                                <tr>
-                                    <td>Chad</td>
-                                    <td>65</td>
-                                    <td>52</td>
-                                    <td>46.4</td>
-                                </tr>
-                                <tr>
-                                    <td>Haiti</td>
-                                    <td>52.1</td>
-                                    <td>42.8</td>
-                                    <td>37.3</td>
-                                </tr>  
-                                <tr>
-                                    <td>Madagascar</td>
-                                    <td>44.8</td>
-                                    <td>44.1</td>
-                                    <td>36.3</td>
-                                </tr>
-                                <tr>
-                                    <td>Sierra Leone</td>
-                                    <td>58.8</td>
-                                    <td>53.3</td>
-                                    <td>38.9</td>
-                                </tr>
-                                <tr>
-                                    <td>East Timor</td>
-                                    <td>--</td>
-                                    <td>--</td>
-                                    <td>40.7</td>
-                                </tr>
-                                <tr>
-                                    <td>Zambia</td>
-                                    <td>47</td>
-                                    <td>50.9</td>
-                                    <td>41.1</td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <div class="red"></div>
+        <div class="blank100"></div>
+        <div class="row">
+            <div class="col-md-5">
+                <p class="smalltext"><b>The history of malaria stretches from its prehistoric origin as a zoonotic disease in the primates of Africa through to the 21st century. </b>A widespread and potentially lethal human infectious disease, at its peak malaria infested every continent, except Antarctica. Its prevention and treatment have been targeted in science and medicine for hundreds of years. Since the discovery of the parasites which cause it, research attention has focused on their biology, as well as that of the mosquitoes which transmit the parasites. For thousands of years, traditional herbal remedies have been used to treat malaria. The first effective treatment for malaria came from the bark of cinchona tree, which contains quinine. Prophylactic quinine was prescribed in malaria endemic areas, and new therapeutic drugs, including chloroquine and artemisinins, were used to resist the scourge. Today, artemisinin is present in every remedy applied in treatment of malaria. After introducing artemisinin as a cure administered together with other remedies, the mortality in Africa went down by a half.</p>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <img src="/img/2edit.gif" id="responsive-image">
+            </div>
+        </div>
+        <div class="blank100"></div>
+
+
+        <div class="red"></div>
+        <a id="chorovis"></a>
+
+        <div class="blank100"></div>
+
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <div id="choro"></div>
+                <p class="t" id="tooltip"></p>
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <!-- toplevel headline -->
+                <h1 class="bigtext">STATS</h1>
+                <h3>Key Facts</h3>
+                <div class="blank25"></div>
+                <!-- paragraph text -->
+                <div class="blank25"></div>
+                <p class="smalltext">
+
+                    <b>RISK:</b> About 3.2 billion people – almost half of the world’s population – are at risk of malaria. <br>
+                    <b>CASES:</b> 214 million malaria cases reported worldwide in 2015.<br>
+                    <b>INCIDENCE:</b> 37% global decrease in malaria incidence between 2000 and 2015.<br>
+                    <b>MORTALITY:</b> 60% decrease in global malaria mortality rates between 2000 and 2015.<br><br></p>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <select class="form-control btn btn-change" id="stats" style="background-color: white">
+                            <option value="Malaria_cases"> Number of Diagnosed Malaria Cases </option>
+                            <option value="Suspected_malaria_cases"> Number of Suspected Malaria Cases </option>
+                            <option value="At_risk"> Percentage Population at Risk </option>
+                            <option value="At_high_risk"> Percentage Population at High Risk </option>
+                        </select>
                     </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="asset/vis.png" alt="vis" class="vis">
-        </div>
-
-        <div>
-            <p class="smalltext">The visualization above reflects the data from given GHI data set. The indexes are grouped by Countries, as individual countries' indexes are reflections of their unique circumstances and it does not make sense to compare them to each other. The amount of <b>spoil (red)</b> on the <b>grain (shades of yellow, changing based on the year)</b> represents the GHI data - where the greater the number, worse the situation. This visualization intends to experiment with visual motifs and understanding.</p>
-            <div class="orange"></div>
-        </div>
-
-        <div style="height:25px"></div>
-
-        <div>
-            <center class="bigtext"><em style="color:#FF5D5D">GOOD 'n BAD</em> VISUALIZATIONS</center>
-        </div>
-
-        <div style="height:25px"></div>
-
-        <div class="row">
-            <div class="col-4">
-                <p class="smalltext"><b style = "color:white">The use of visualization to present information is pervasive in the media. A visual representation is a powerful and effective way to make complicated and confusing information more relevant and easy to understand.</b> <br><br> On the right are a series of visualizations. 2 are considerably good and 2 are considerably bad, with their respective advantages / disadvantages, sparkly-points / flaws. <br><br> There may be more than 1 images for complex / multi-procedural visualizations. </p>
-
-            </div>
-            <div class="col-8" style="padding-top:15px">
-
-                <div id="visexample" class="carousel slide" data-interval="2000" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#visexample" data-slide-to="0" class="active"></li>
-                        <li data-target="#visexample" data-slide-to="1"></li>
-                        <li data-target="#visexample" data-slide-to="2"></li>
-                        <li data-target="#visexample" data-slide-to="3"></li>
-                        <li data-target="#visexample" data-slide-to="4"></li>
-                        <li data-target="#visexample" data-slide-to="5"></li>
-                        <li data-target="#visexample" data-slide-to="6"></li>
-                        <li data-target="#visexample" data-slide-to="7"></li>
-                        <li data-target="#visexample" data-slide-to="8"></li>
-                        <li data-target="#visexample" data-slide-to="9"></li>
-                        <li data-target="#visexample" data-slide-to="10"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="asset/good1/a.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>U.S.Gun Deaths [1]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/good1/b.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>U.S.Gun Deaths [2]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/good1/c.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>U.S.Gun Deaths [3]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/good1/d.png">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>U.S.Gun Deaths [4]]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/bad1/a.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5 style="color:black">U.S.Gun Control [1]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/bad1/b.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5 style="color:black">U.S.Gun Control [2]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/bad1/c.png">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5 style="color:black">U.S.Gun Control [3]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/good2/a.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Royal Constellations [1]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/good2/b.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Royal Constellations [2]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/good2/c.png" >
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Royal Constellations [3]</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/bad2/a.png">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5 style="color:black">Years You have Left to Live, Probably [1]</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#visexample" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#visexample" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div> 
-
-        <div class="gry"></div>
-        <div class="row">
-            <div class="col-7">
-                <p class="smalltext" style="color:white;margin:0px;">a good visualization</p>
-                <h5 class="good">U.S. GUN DEATHS [ IN 2013 ]</h5>
-                <p class="smalltext" style="color:white">
-                    <a href="https://guns.periscopic.com/?year=2013">https://guns.periscopic.com/?year=2013</a><br>
-                    This definitely isn't the most visually distinguishable visualizations on the web, especially considering the number of data entries. However, it is quite powerful. This is a project by Periscope on visualizing gun death information for the general public.  Data on guns and deaths can be difficult to visualize, given the personal and emotional relations, yet this one has to be one of the most compelling.</p>
-                <ul>
-                    <li > <p class="smalltext" style="color:white">The creators used intriguing (and very appropriate) techniques such as a motion-based walkthrough, interpolation, subtility and various visual metaphors (like yellow-warning, the trajectory of life, etc.) to convey their perspective on gun-control.</p></li>
-                    <li>  <p class="smalltext" style="color:white">It is especially helpful that they have included mass-mined links to every single source of data, as well as additional information such as population sub-groups and means.</p></li>
-                </ul>
-                <p class="smalltext" style="color:white">One potential improvement they could add would be additional interaction guidance on this visualization (as it is a little hard to navigate around without knowing what's possible). Otherwise, this is a rather powerful visualization.</p>
-
-            </div>
-            <div class="col-5">
-                <img src="asset/good1/1.gif" class="exampleright">
-                <img src="asset/good1/c.png" class="exampleright">
-            </div>
-        </div> 
-
-        <div class="gry"></div>
-
-        <div class="row">
-            <div class="col-5">
-            <img src="asset/bad1/a.png" class="exampleleft">
-                <img src="asset/bad1/b.png" class="exampleleft">
-            </div>
-
-            <div class="col-7">
-                <p class="smalltext" style="color:white;margin:0px;">a bad visualization</p>
-                <h5 class="bad">GUN CONTROL IN AMERICA: A STATE BY STATE BREAKDOWN</h5>                
-                <p class="smalltext" style="color:white">
-                    <a href="https://www.theglobeandmail.com/news/world/gun-control-in-america-a-state-by-state-breakdown/article6465107/">https://www.theglobeandmail.com/news/world/gun-control-in-america-a-state-by-state-breakdown/article6465107/</a><br>
-                    This is a very neutral visualization on gun-control information in the US. </p>
-                <ul>
-                    <li > <p class="smalltext" style="color:white">It's slightly hard to navigate and can be misleading, as the information is grouped by states, yet the presentation is in a radial-dial/pie, which suggests another type of data (%). </p></li>
-                    <li>  <p class="smalltext" style="color:white">The typography is too small/indistinguishable and visual color-coding is not intuitive (other than the blue-red coding for the political parties). </p></li>
-                    <li>  <p class="smalltext" style="color:white">Overall layout of the visualization makes it hard to read, with the legend and highlighted information taking to much space vertically (they could easily be combined into one), leavin the user have to scroll down to read the additional paragraphs underneath. </p></li>
-                    <li>  <p class="smalltext" style="color:white">The smaller pie-charts don't mean much.</p></li>
-                </ul>
-                <p class="smalltext" style="color:white">I think this is a clean visualization. It needs to consider the user experience more.</p>
-
-            </div>
-
-        </div> 
-        <div class="gry"></div>
-        <div class="row">
-            <div class="col-7">
-                <p class="smalltext" style="color:white;margin:0px;">a good visualization</p>
-                <h5 class="good">ROYAL CONSTELLATIONS</h5>
-                <p class="smalltext" style="color:white">
-                    <a href="http://www.datasketch.es/october/code/nadieh/">http://www.datasketch.es/october/code/nadieh/</a><br>
-                    Nadieh Bremer's works are always complex and beautiful. Roya Constellation is a visualization project that looks at the web of family relations of European royal and aristocratic families to see how all 10 of the current hereditary royal leaders of Europe can be connected to each other through their ancestors. 
+                </form>
+                <p class="smallertext"><br>The Choropleth map is done using GeoJson instead of TopoJson since it makes the implementation a lot easier (rather than having to go through multiple layers of information on the africa.topo.json)</p>
+                <p class="smalltext">
+                    <br> → "Malaria is a life-threatening disease caused by parasites that are transmitted to people through the bites of infected female mosquitoes." <br><br>
+                    → "Young children, pregnant women and non-immune travellers from malaria-free areas are particularly vulnerable to the disease when they become infected." <br><br>
+                    → "Malaria is preventable and curable, and increased efforts are dramatically reducing the malaria burden in many places." <br>
                 </p>
-                <ul>
-                    <li > <p class="smalltext" style="color:white">The key to the visualization is effective and distinguishable. Given the amount of data present, I find it surprisingly easy to find the current royals (highlighted in yellow) and their relatives through following the color-coding.</p></li>
-                    <li>  <p class="smalltext" style="color:white">Nadieh has made the interaction of this really easy by implementing subtle details that makes web navigation easier than most other visualization interfaces I have encountered, such as a map-lock after click that can only be unlocked when the user moves their mouse, making scrolling and zooming in much easier than expected.</p></li>
-                </ul>
-                <p class="smalltext" style="color:white">There are minor things that can be made better, such as reversing the gradients so it follows the hot-close/cold-far motif, but the overall visualization is clean, engaging and informative.</p>
+
+                <div class="blank200"></div>
             </div>
-            <div class="col-5">
-            <img src="asset/good2/b.png" class="exampleright">
-                <img src="asset/good2/c.png" class="exampleright">
-            </div>
-        </div> 
-        <div class="gry"></div>
+
+        </div>
+
+
+        <div class="red"></div>
+        <a id="2ndvis"></a>
+        <div class="blank100"></div>
+
+
         <div class="row">
+            <div class="col-md-8">
 
-            <div class="col-5">
-                <img src="asset/bad2/years-left-probably.gif" class="exampleleft">
-                <img src="asset/bad2/a.png" class="exampleleft">
+                <h1 class="bigtext">THE PARASITES</h1>
+                <h3>Malaria in humans is caused by five species of parasites belonging to the genus Plasmodium, a unicellular eukaryotic obligate of vertebrates and insects.</h3>
+                <!-- paragraph text -->
+                <div class="nd"></div>
+                <p class="smalltext">Click on the nodes to expand / collapse the Plasmodium parasite tree.</p>
             </div>
-            <div class="col-7">
-                <p class="smalltext" style="color:white;margin:0px;">a bad visualization</p>
-                <h5 class="bad">YEARS YOU HAVE LEFT TO LIVE, PROBABLY</h5>                
-                <p class="smalltext" style="color:white">
-                    <a href="https://flowingdata.com/2015/09/23/years-you-have-left-to-live-probably/">https://flowingdata.com/2015/09/23/years-you-have-left-to-live-probably/</a><br>
-                    This one is interesting, confusing, and annoying at the same time. The graphic uses data from the Social Security Administration (likely just general age demographics information) to simulate one's possible lifetimes. </p>
-                <ul>
-                    <li > <p class="smalltext" style="color:white">The constantly dropping balls is slightly triggering. It is visually interesting, yet after awhile it makes me anxious because of its dropping speed (and slow is actually really fast) and the fact that I don't feel comfortable with the association of the motion. Do they represent real individuals who's lived up to certain points, or just the ones "drop-dead" all of a sudden?</p></li>
-                    <li>  <p class="smalltext" style="color:white">I don't quite understand why its a constantly running visualization. A bar graph / line graph can be easily created with less data points, but enough to present a summary of results. </p></li>
-                    <li>  <p class="smalltext" style="color:white">I'm also not sure why age is important. If the data points are taken without considering when peope lived in the history, my current age shouldn't matter as much. It is at an awkward place between personal and generic with no clear definition.</p></li>
-                </ul>
-                <p class="smalltext" style="color:white">I find this visualization reall interesting. What I liked was the humor of it (aka Beer, gimme) as well as the almost punch-card aesthetics, though I'm not quite sure how it contributes to the understanding of the information presented other than creating a unified mood of anxiousness.</p>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <img src="/img/1edit.gif" id="responsive-image">
+                <p class="smalltext"><br>Four of these – <b>P. falciparum, P. vivax, P. malariae and P. ovale</b> – are human malaria species that are spread from one person to another via the bite of female mosquitoes of the genus Anopheles. There are about 400 different species of Anopheles mosquitoes, but only 30 of these are vectors of major importance. In recent years, human cases of malaria due to P. knowlesi have been recorded – this species causes malaria among monkeys in certain forested areas of South-East Asia. Current information suggests that P. knowlesi malaria is not spread from person to person, but rather occurs in people when an Anopheles mosquito infected by a monkey then bites and infects humans (zoonotic transmission). P. falciparum and P. vivax are the most prevalent, and P. falciparum is the most dangerous, with the highest rates of complications and mortality. This deadly form of malaria is a serious public health concern in most countries in sub-Saharan Africa.</p>
             </div>
-
-        </div> 
-        <div class="gry"></div>
+        </div>
 
 
+        <div class="blank100"></div>
 
-        <!-- Optional JavaScript -->
-        <script src="js/sorttable.js"></script>
+        <a id="onwards"></a>
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <div class="red"></div>
+        <a id="onwards"></a>
+        <div class="blank100"></div>
+
+
+        <div class="row">
+            <div class="col-md-3">
+
+                <h1 class="bigtext">PROGRESS</h1>
+                <!-- paragraph text -->
+                <p class="smalltext">
+                    <b><br>Progress to elimination. </b><br>An increasing number of countries are moving towards elimination of malaria. Whereas only 13 countries were estimated to have fewer than 1000 malaria cases in 2000, 33 countries are estimated to have achieved this milestone in 2015.<br><br>
+                    <b>Financing of malaria control programmes. </b><br>Global financing for malaria control increased from an estimated US$ 960 million in 2005 to US$ 2.5 billion in 2014.</p>
+            </div><div class="col-md-1"></div>
+            <div class="col-md-8">
+                <h1 class="bigtext">MOVING FORWARD</h1>
+                <!-- paragraph text -->
+                <p class="smalltext">
+                    <br>To address remaining challenges in global malaria control and elimination, WHO has developed the Global Technical Strategy for Malaria 2016-2030. Adopted by the World Health Assembly in May 2015, the strategy provides a technical framework for all endemic countries as they work towards malaria control and elimination. This Global Technical Strategy sets ambitious but achievable goals for 2030, including: reducing malaria case incidence by at least 90%; reducing malaria mortality rates by at least 90%; eliminating malaria in at least 35 countries; preventing a resurgence of malaria in all countries that are malaria-free. To achieve these targets, annual funding for malaria will need to triple over the next 15-year period, from US$ 2.7 billion (current level of spending) to US$ 8.7 billion by 2030.<br><br>
+                    <b>International travellers could be at risk of malaria infection in 97 countries around the world, mostly in Africa, Asia and the Americas.<br><br>
+                        Prevention of mosquito bites between dusk and dawn is the first line of defence against malaria. Measures to prevent mosquito bites include sleeping under long-lasting insecticidal nets, and using protective clothing and insect repellents. Depending on the malaria risk in the area to be visited, international travellers may also need to take preventive medication (chemoprophylaxis) prior to, during, and upon return from their travel.</b></p>
+            </div>
+        </div>
+        <div class="blank100"></div>
+        <div class="red"></div>
+
+
+        <div class="row">
+            <div class="col-md-4"><p class="smalltext">CS171 Midterm</p></div>
+            <div class="col-md-4"><p class="smalltext">Some images and texts taken from Google / Flaticon.com</p></div>
+            <div class="col-md-4"><div class="right"><p class="smalltext">Interactive Visualization by <a href="https://yip.design/">LUCY YIP</a></p></div></div>
+        </div>
+
+
+
+        <!--
+
+MALARIA
+- Information
+- Choropleth 
+- Implementation of own sketch or tree visualization
+
+<div class="btn-group">
+<a class="btn btn-primary btn-change" href="https://www.globalhungerindex.org/" role="button">more info from WHO</a>
+
+<a class="btn btn-primary dropdown-toggle btn-change" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+</a>
+<ul class="dropdown-menu">
+<li><a href="http://www.cs171.org/2019/assets/instructions/hw1/HW1.html" class="drop">CS171 Homework Page</a></li>
+<li><a href="https://theuselessweb.com/" class="drop">A Random Site</a></li>
+</ul>
+
+</div>
+
+
+
+
+-->
+
+
+
+
+        <!-- Load JS libraries -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/queue.min.js"></script>
+        <script src="js/topojson.min.js"></script>
+        <script src="js/d3.min.js"></script>
+        <script src="js/d3-tip.js"></script>
+
+        <!-- Choropleth and second visualization -->
+        <script src="js/vis-choropleth.js"></script>
+        <script src="js/vis-second.js"></script>
 
     </body>
 </html>
