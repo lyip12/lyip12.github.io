@@ -31,7 +31,7 @@ b{
 
 p.smalltext{
     color: #FF5D5D;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
     text-align: left;
 }
@@ -48,7 +48,7 @@ p.t{
     height: 1px
         z-index: 1000;
     color: #FF5D5D;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
     text-align: left;
 }
@@ -111,7 +111,7 @@ a.drop {
 
 a.btn{
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
     border: 0px;
     color:white;
@@ -130,7 +130,7 @@ a.btn-change:hover{
 th{
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     padding-bottom: 10px;
 }
@@ -138,7 +138,7 @@ td{
     padding-right: 40px;
     color: rosybrown;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
 }
 
@@ -187,7 +187,7 @@ td{
 
 .node text {
     color: #FF5D5D;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
     text-align: left;
 }
