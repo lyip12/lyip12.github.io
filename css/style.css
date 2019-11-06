@@ -10,11 +10,11 @@ body{
 h1.bigtext {
     font-family: 'Roboto', sans-serif;
     color: white;
-    font-size: 62px;
+    font-size: 48px;
     font-weight: 700;
 }
 
-h3 {
+h5 {
     font-family: 'Roboto', sans-serif;
     color: white;
 }
@@ -31,14 +31,14 @@ b{
 
 p.smalltext{
     color: #FF5D5D;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300;
     text-align: left;
 }
 
 p.smallertext{
     color: white;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 300;
     text-align: left;
 }
@@ -48,7 +48,7 @@ p.t{
     height: 1px
         z-index: 1000;
     color: #FF5D5D;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     text-align: left;
 }
@@ -186,8 +186,8 @@ td{
 }
 
 .node text {
-    color: white;
-    font-size: 18px;
+    color: #FF5D5D;
+    font-size: 14px;
     font-weight: 300;
     text-align: left;
 }

@@ -1,9 +1,9 @@
 //Example taken directly from https://bl.ocks.org/d3noob/80c100e35817395e88918627eeeac717 with edits
 
 
-var margin = {top: 30, right: 0, bottom: 30, left: 275},
+var margin = {top: 30, right: 0, bottom: 30, left: 230},
     width = 1000 - margin.left - margin.right,
-    height = 650 - margin.top - margin.bottom;
+    height = 500 - margin.top - margin.bottom;
 
 
 var svg2 = d3.select(".nd").append("svg")
