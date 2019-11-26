@@ -148,7 +148,7 @@ function updatemap(){
         + sr
         + d.Comments + "<br></p>"
         + "<img src='assets/dataimg/"+d.ID+"_01.jpg' class='responsive-image'>"
-        + "<p>Entry ID: "+d.ID" - <a href="+d.Source+">Source of Data Entry</a></p>";
+        + "<p>Entry ID: "+d.ID+" - <a href="+d.Source+">Source of Data Entry</a></p>";
         
         document.getElementById("maptext").innerHTML = t;
     }
