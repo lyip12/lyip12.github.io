@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>D3 Monument Map</title>
+        <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+        <script src="/assets/data/boston_neighborhoods.json"></script>
+        <script src="/assets/data/raw_json.json"></script>
+
+    </head>
+    <body>
+        <div class="section">
+            <div class="row">
+                <div class="col-md-2 containera">
+                    <p>
+                        <b>CMS.833</b><br>
+                        Digital Humanities<br>
+                        Comparative Media Studies<br>
+                        MIT || Fall 2019
+                    </p>
+                </div>
+                <div class="col-md-2 containera">
+                </div>
+                <div class="col-md-2 containera">
+                </div>
+                <div class="col-md-4 containera">
+                </div>
+
+                <div class="col-md-2">
+                    <div class="right">
+                        <p>
+                            Anna Ivanov<br>Karyn Pugliese<br>Lucy Yip<br>Meesh Zucker
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div style="height:50px"></div>
+
+            <div class="row">
+                <div class="col-md-6" style="padding-right: 10vw;">
+                    <h1>MONUMENTAL <b>MEMORY IN SPACE</b></h1>
+
+                    <p>“We recognize our representations of space as value-laden guides to the world as we perceive it” -David J. Bodenhamer, “The Potential of Spatial Humanities”</p>
+                </div>
+                <div class="col-md-2" style="padding-left: 3vw;">
+                    <div class="line"></div>
+                    <div style="height:10px"></div>
+                    <p>
+                        <br>Monuments venerate a person or commemorate an event, relevant to a social group’s collective memory, history. <br><br>In recent years communities are rethinking who and what they have memorialized, and if in fact the monuments are commemorating intolerance, violence and hate when viewed through a fuller understanding of history.<br><br>
+                    </p>
+                    <div class="line"></div>
+                </div>
+                <div class="col-md-2" style="padding-left: 3vw;">
+                    <div class="line"></div>
+                    <div style="height:10px"></div>
+                    <p>
+                        <br>Some memorials are being rethought, altered or removed. Once a memorial is removed, so is all visual evidence of the controversy. This project preserves the memory, and journey of the debates, controversies and changes. The geographic area is limited to Boston.<br><br>
+                    </p>
+                    <div class="line"></div>
+                </div>
+
+                <div class="col-md-2" style="padding-left: 3vw; ">
+                    <p><b>This is a project from the Digital Humanities course at MITCMS. The course examines theory and practice of using computational methods in the emerging field of digital humanities. Develops an understanding of key digital humanities concepts such as data
+                        representation, digital archives, information visualization, and user interaction through the study of contemporary research in conjunction with working on real-world projects for scholarly, educational, and public needs.</b></p>
+                </div>
+            </div>
+            <div style="height:50px"></div>
+            <div class="line"></div>
+            <div style="height:50px"></div>
+
+            <p>The project began by thinking about personal memories embed meaning into objects and moved into a discussion of how objects are used to build collective memory, a collective history, a sense of progression to the present and a common vision for the future. Public symbols such as monuments, landmarks are generally built by the state and can be reflective or even manipulative in building a story. They create belonging and collectivity.  They can also exclude and alienate.<br><br>In recent years there has been a revisiting of monuments in the US, the most publicized in Charlottesville, where hundreds of white supremacists and Nazis staged a torch-lit march that set off a weekend of violence in 2017. The rally was originally organized to protest the removal of a statue of Robert E. Lee from Emancipation Park and drew about 600 participants who later clashed with protesters form the left, resulting in several injuries and the death of a young woman.  Professor of architectural history Louis Nelson notes the confederate monuments, built in the 1920s: “They are victory monuments, unflinching testaments to the collapse of Reconstruction and the re-establishment of white supremacy. And as public art they inscribed that victory into the fabric of the city.<br><br>Malgorzata Kalinowska who studies psychology and memory notes monuments allow “individuals living within a society to participate in a shared cultural space and contain their individual historical experience within its particular set of symbols and signs.” Louis Nelson states that monuments can also be carefully constructed to promote free and equal citizenship “for the state to speak out in favor of ideas of equality and tolerance and condemn those of inequality and intolerance.”<br><br><b>In Boston, citizens are also rethinking public space, memory and inclusion. A confederate monument was removed from public space, in the wake of Charlottesville.  What does it say about public memory that of more than 70 statues in public spaces only four honour women?  A bright pink piece of paper taped to a monument in front of the university’s Wadsworth House reminds us of who is missing from public history and what stories are being hidden from collective memory. It reads: “This house was also a place of enslavement. Among those held in bondage in this building were: Titus, Venus, Juba, Bilhah.” As it turns out the note came from The Harvard and Slavery Project which began in 2007 to reclaim this history.  Similarly can the annual vandalizing of statues of Columbus, with red paint and slogans of genocide be understood as subversive discourse in a public narrative that excludes Indigenous peoples and colonialism?  Is there irony in a monument memorializing the Massachusetts 54th Regiment, it’s first all African- American regiment, should be named for Colonel Robert Gould Shaw a white man? Our project looks at how Boston is using space, particularly gender and race in public memory, and asks how might public the space be reformed to build a more inclusive collective memory.</b>
+            </p>
+            <div style="height:50px"></div>
+            <div class="line"></div>
+            <div style="height:50px"></div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="map"></div>
+                    <img src="assets/image/map.png" id="responsive-map" alt="old boston map">
+                    <div style="height:50px"></div>
+                </div>
+                <div class="col-md-4" style="padding-left: 3vw;">
+                    <div>
+                        <p>Click on the dropdowns below to filter information</p>
+                    </div>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <select id="category" class="btn btn-secondary btn-sm dropdown-toggle">
+                                <option value="all"> <p> All Record Category </p></option>
+                                <option value="Building"> <p> Buildings Only </p></option>
+                                <option value="Statue"> <p> Statues Only </p></option>
+                                <option value="Object"> <p> Objects Only </p></option>
+                                <option value="Plaque/Historic Marker"> <p> Plaques / Historic Markers Only </p></option>
+                            </select>
+                        </div>
+                    </form>
+                    <div style="height:10px"></div>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <select id="type" class="btn btn-secondary btn-sm dropdown-toggle">
+                                <option value="all"> <p> All Establishment Type </p></option>
+                                <option value="Community"> <p> Community Only </p></option>
+                                <option value="National"> <p> National Only </p></option>
+                                <option value="Local"> <p> Local Only </p></option>
+                            </select>
+                        </div>
+                    </form>
+                    <div style="height:10px"></div>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <select id="status" class="btn btn-secondary btn-sm dropdown-toggle">
+                                <option value="all"> <p> All Current Status </p></option>
+                                <option value="Original Location"> <p> Original Location Only </p></option>
+                                <option value="Relocated"> <p> Relocated Only </p></option>
+                                <option value="Removed"> <p> Removed Only </p></option>
+                            </select>
+                        </div>
+                    </form>
+                    <p><br>*Built Year filter and tag filter yet to be fully implemented due to data-formatting error</p>
+                    <div style="height:25px"></div>
+                    <div class="line"></div>
+                    <div style="height:50px"></div>
+                    <div id="maptext"><p>Hover above individual data entry on the map to display establish name, and click on individual data entry for more information</p></div>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <div style="height:50px"></div>
+
+            <div class="row">
+                <div class="col-md-2" style="padding-right: 3vw;">
+                    <div class="line"></div>
+                    <div style="height:20px"></div>
+                    <h5>Downtown</h5>
+                    <p><br>The Downtown Walk begins at the State House and goes past many of Boston’s earliest historic sites, ending at Franklin and Washington streets, a block below Tremont Street and the Boston Common. The walk features women across the centuries, with a focus on the eighteenth century through the mid-nineteenth century. It includes women who wrote poetry, essays, and plays and spoke out publicly before members of the Massachusetts State Legislature and in Boston’s halls and churches for the abolition of slavery, woman suffrage, and African American and Native American rights. Boston’s downtown area is home to its business and financial institutions, as well as to a major shopping area and the Quincy Market at Faneuil Hall.</p>
+                    <div style="height:10px"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="col-md-2" style="padding-right: 3vw;">
+                    <div class="line"></div>
+                    <div style="height:20px"></div>
+                    <h5>Beacon Hill</h5>
+                    <p><br>The Beacon Hill Walk begins at the Massachusetts State House with the statues of two seventeenth century women religious dissenters. The walk continues up, down, and across Beacon Hill, often paralleling the Black Heritage Trail. Starting with intense activity in the period before and after the Civil War and continuing into the nineteenth century, women writers and artists living here supported social movements ranging from anti-slavery to suffrage. The walk pays particular attention to the story of Beacon Hill’s African American women and of Boston’s first women doctors and professional nurses. Beacon Hill is a designated Historic District with narrow, steep, sometimes cobblestone streets, and brick homes featuring beautiful doorways and window boxes. It was first developed by the Mount Vernon Proprietors in 1795. Charles Street along its western edge includes antique and specialty shops, restaurants, and grocery stores.</p>
+                    <div style="height:10px"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="col-md-2" style="padding-right: 3vw;">
+                    <div class="line"></div>
+                    <div style="height:20px"></div>
+                    <h5>Backbay West</h5>
+                    <p><br>The Back Bay West Walk starts at Copley Square and ends at the Boston Women’s Memorial. Focusing on women of the mid-nineteenth and early twentieth centuries, the sites demonstrate the high energy devoted by women to the arts and education, pointing out educational institutions, clubs, and art associations as well as women’s sculptures.</p>
+                    <div style="height:10px"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="col-md-2" style="padding-right: 3vw;">
+                    <div class="line"></div>
+                    <div style="height:20px"></div>
+                    <h5>Backbay East</h5>
+                    <p><br>The Back Bay, originally a mudflat, was filled in with gravel brought from suburban Needham by train between 1852 and 1890. The land is flat, with streets laid out in a straight grid. The cross streets are conveniently named alphabetically from A to H. This elegant neighborhood includes Commonwealth Avenue with its tree-lined mall of grass, center walking path, and sculptures, as well as the “uptown” shopping area with high-end stores, art galleries, and restaurants. The Back Bay East Walk starts and ends at the Public Garden. The sites highlight the work of women in the arts and in education, and women who led the way in environmental protection, suffrage, and peace.</p>
+                    <div style="height:10px"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="col-md-4" style="padding-left: 3vw;">
+                    <h1>Boston Women’s Heritage Trail</h1>
+                    <p><br>Since 1989, the Boston Women’s Heritage Trail (BWHT) has worked to restore women to their rightful place in the history of Boston and in the school curriculum by uncovering, chronicling, and disseminating information about the women who have made lasting contributions to the City of Boston.</p>
+
+
+
+
+                    <div id="visexample" class="carousel slide" data-interval="2000" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#visexample" data-slide-to="0" class="active"></li>
+                            <li data-target="#visexample" data-slide-to="1"></li>
+                            <li data-target="#visexample" data-slide-to="2"></li>
+                            <li data-target="#visexample" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="assets/image/w1.png" >
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="assets/image/w2.png" >
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="assets/image/w3.png" >
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="assets/image/w4.png" >
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#visexample" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#visexample" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+            <div style="height:50px"></div>
+            <div class="line"></div>
+            <div style="height:50px"></div>
+            <div>
+                <h1>Tell A Story</h1>
+                <p><br>This is some filler text of information regarding form and uploading.<br><b>This part still needs to be completed</b></p>
+            </div>
+            <div style="height:50px"></div>
+            <div class="line"></div>
+            <div style="height:50px"></div>
+            <div class="right">
+                <p><b>Bibliography</b><br><br>
+                    Associated Press “On Columbus Day, statue in Providence vandalized: ‘Stop celebrating genocide’” Oct. 14, 2019<br>
+
+                    Giaimo, Cara “College Students Are Annotating Their Campus Monuments With Notes on Slavery” in Atlasobscura Dec 14, 2015<br>
+
+                    Kalinowska, M. (2012). Monuments of memory: Defensive mechanisms of the collective psyche and their manifestation in the memorialization process. Journal of Analytical Psychology, 57(4), 425-444.<br>
+                    MacFarquhar Neil Charlottesville Lawsuit Puts Rising Intolerance on Trial in New York Times, Oct. 28, 2019<br>
+
+                    Nelson, L. (2018). Object Lesson: Monuments and Memory in Charlottesville. Buildings & Landscapes: Journal of the Vernacular Architecture Forum, 25, 18-19<br>
+
+                    Tsai, G. (2016). The Morality of State Symbolic Power. Social Theory and Practice, 42(2), 318-342
+                </p>
+            </div>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+        <script src="js/map.js"></script>
+        <script src="js/visualeffects.js"></script>
+        <script src="js/responsive.js"></script>
+    </body>
+</html>
