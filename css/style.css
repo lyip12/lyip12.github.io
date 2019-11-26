@@ -1,40 +1,43 @@
 /* BODY */
 
-body{
-    padding: 150px;
+body {
+    background-color: #f2e2c7 !important;
 }
 
+div.section {
+    padding: 100px;
+}
 
 /* TEXT */
 
-h1.bigtext {
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: 48px;
-    font-weight: 700;
+h1 {
+    font-family: 'Roboto', sans-serif !important;
+    color: #8b9487 !important;
+    font-size: 48px !important;
+    font-weight: 700 !important;
 }
 
 h5 {
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: #d1a380;
+    font-size: 24px !important;
+    font-weight: 700 !important;
 }
 
 p{
     font-family: 'Roboto', sans-serif;
+    color: #ADA07C !important;
+    font-size: 12px !important;
+    font-weight: 300 !important;
+    text-align: left;
 }
 
 b{
     font-family: 'Roboto', sans-serif;
     color: white;
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 
-p.smalltext{
-    color: #FF5D5D;
-    font-size: 14px;
-    font-weight: 300;
-    text-align: left;
-}
 
 p.smallertext{
     color: white;
@@ -43,63 +46,28 @@ p.smallertext{
     text-align: left;
 }
 
-p.t{
-    margin-top: -300px;
-    height: 1px
-        z-index: 1000;
-    color: #FF5D5D;
-    font-size: 14px;
-    font-weight: 300;
-    text-align: left;
-}
-
-p.wherr{
-    font-size: 10px;
-    padding: 30px;
-}
-
-/* IMAGES */
+/* IMAGES 
 
 img.icon{
-    width: 80%;
-    margin-top: 5px;
-    margin-bottom: 10px;
+width: 80%;
+margin-top: 5px;
+margin-bottom: 10px;
 }
 
 /* DIVS + FORMAT STUFF */
 
 
-.red{
-    margin-top: 2px;
-    margin-bottom: 15px;
-    height: 2px;
-    background: #FF3E63; 
-}
-
-.blank100{
-    height: 100px;
-}
-
-.blank200{
-    height: 200px;
-}
-
-.blank25{
-    height: 25px;
-}
-
-.lastcol{
-    padding-left: 30px;
-    height:100%;
-    margin-right:-50px;
+.line{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1px;
+    background: #ADA07C; 
 }
 
 a.hyprtxt{
     color: crimson;
-    font-weight: 700;
+    font-weight: 300;
 }
-
-
 
 a.drop {
     font-family: 'Roboto', sans-serif;
@@ -132,7 +100,6 @@ th{
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    padding-bottom: 10px;
 }
 td{
     padding-right: 40px;
@@ -147,7 +114,7 @@ td{
 }
 
 .right{
-    text-align-last: right;
+    text-align-last: right !important;
 }
 
 .carousel-inner > .item > img,
@@ -162,7 +129,7 @@ td{
     display: inline-block;
     position: relative;
     width: 100%;
-    padding-bottom: 100%; /* aspect ratio */
+    padding-bottom: 110%; /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
 }
@@ -174,9 +141,8 @@ td{
 }
 
 .containera {
-    align-items: flex-end;
     display: flex;
-    justify-content: center;
+    align-items: flex-end;
 }
 
 .node circle {
@@ -198,6 +164,31 @@ td{
     stroke-width: 2px;
 }
 
-#responsive-image {  
-    width: 90%;  height: auto; 
+#responsive-map {  
+    width: 100%;
+    height: auto; 
 } 
+
+#responsive-image {  
+    width: 100%;
+    height: auto; 
+} 
+
+.parallax {
+    /* The image used */
+    background-image: url("/assets/image/miso.jpg");
+
+    /* Set a specific height */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-secondary {
+    background-color: #8b9487 !important;
+    border: none !important;
+    height: 30px;
+}
