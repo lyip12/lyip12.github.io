@@ -146,7 +146,7 @@ function updatemap(){
         + "<b>Establishment Type: </b>" + d.Type+"<br>"
         + "<b>Current Status: </b>" + d.Status+"<br><br>"
         + sr
-        + d.Comments + "<br></p>"
+        + d.Comments + "</p>"
         + "<img src='assets/dataimg/"+d.ID+"_01.jpg' class='responsive-image'>"
         + "<p>Entry ID: "+d.ID+" - <a href="+d.Source+">Source of Data Entry</a></p>";
         
